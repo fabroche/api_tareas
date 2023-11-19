@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     # CORS Headers
     'corsheaders',
     # my apps
-    'task',
+    'restaurant',
 ]
 
 MIDDLEWARE = [
