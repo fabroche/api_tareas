@@ -5,12 +5,6 @@ from restaurant.modelos.mesasModel import MesaStatus
 from restaurant.modelos.mesasModel import MesaUbicacion
 
 
-class MesaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Mesa
-        fields = '__all__'
-
-
 class MesaStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = MesaStatus
@@ -20,4 +14,14 @@ class MesaStatusSerializer(serializers.ModelSerializer):
 class MesaUbicacionSerializer(serializers.ModelSerializer):
     class Meta:
         model = MesaUbicacion
+        fields = '__all__'
+
+
+class MesaSerializer(serializers.ModelSerializer):
+    mesa_ubicacion = MesaUbicacionSerializer(many=False)
+    mesa_status = MesaStatusSerializer(many=False)
+
+    class Meta:
+        model = Mesa
+        # fields = ['id_mesa', 'nombre_mesa', 'mesa_ubicacion', 'mesa_status']
         fields = '__all__'

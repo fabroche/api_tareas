@@ -19,12 +19,18 @@ class IngredienteSerializer(serializers.ModelSerializer):
 
 
 class IngredienteDetalleSerializer(serializers.ModelSerializer):
+    ingrediente = IngredienteSerializer(many=False)
+    unidad_medida = UnidadMedidaSerializer(many=False)
+
     class Meta:
         model = IngredienteDetalle
         fields = '__all__'
 
 
 class IngredienteExistenciaSerializer(serializers.ModelSerializer):
+    ingrediente = IngredienteSerializer(many=False)
+    unidad_medida = UnidadMedidaSerializer(many=False)
+
     class Meta:
         model = IngredienteExistencia
         fields = '__all__'

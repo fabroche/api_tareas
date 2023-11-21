@@ -23,10 +23,6 @@ class Menu(models.Model):
         help_text='Seleccione los elementos del menu'
     )
 
-    # title = models.CharField(max_length=255)
-    # description = models.TextField(blank=True)
-    # price = models.IntegerField(blank=False)
-
     # class Meta:
     #     verbose_name_plural = 'Menus'
 
