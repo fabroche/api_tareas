@@ -19,8 +19,8 @@ class OrdenStatusSerializer(serializers.ModelSerializer):
 class OrdenSerializer(serializers.ModelSerializer):
     orden_status = OrdenStatusSerializer(many=False)
     mesa = MesaSerializer(many=False)
-    mesero = MeseroSerializer(many=False) or None
-    cliente = ClienteSerializer(many=False) or None
+    mesero = MeseroSerializer(many=True)
+    cliente = ClienteSerializer(many=True)
 
     class Meta:
         model = Orden
